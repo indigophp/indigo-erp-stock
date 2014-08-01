@@ -124,10 +124,11 @@ class Model_Product extends \Orm\Model_Temporal
 			],
 		],
 		'stock' => [
-			'validation' => [
-				'required',
-				'type' => 'numeric',
-			],
+			'default' => 1,
+			// 'validation' => [
+			// 	'required',
+			// 	'type' => 'numeric',
+			// ],
 		],
 		'status' => [
 			'type'     => 'checkbox',

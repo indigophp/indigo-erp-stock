@@ -10,7 +10,7 @@ class Create_products
 			'id'              => ['constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true],
 			'temporal_start'  => ['constraint' => 11, 'type' => 'int'],
 			'temporal_end'    => ['constraint' => 11, 'type' => 'int'],
-			'category_id'     => ['constraint' => 11, 'type' => 'int', 'unsigned' => true],
+			'category_id'     => ['constraint' => 11, 'type' => 'int', 'unsigned' => true, 'null' => true],
 			'manufacturer_id' => ['constraint' => 11, 'type' => 'int', 'unsigned' => true],
 			'tax_class_id'    => ['constraint' => 11, 'type' => 'int', 'unsigned' => true, 'null' => true],
 			'type_id'         => ['constraint' => 11, 'type' => 'int', 'unsigned' => true, 'null' => true],

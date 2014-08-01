@@ -144,6 +144,7 @@ class Model_Product extends \Orm\Model_Temporal
 	 * {@inheritdoc}
 	 */
 	protected static $_view_properties = [
+		'id',
 		'name',
 		'price',
 		'stock',

@@ -14,7 +14,8 @@
     "require": {
         "composer/installers": "~1.0",
         "indigophp/indigo-erp": "dev-develop",
-        "indigophp/indigo-skeleton": "dev-develop"
+        "indigophp/indigo-skeleton": "dev-develop",
+        "indigophp/fuel-module": "dev-develop"
     },
     "extra": {
         "installer-name": "erp_stock"

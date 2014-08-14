@@ -1,4 +1,4 @@
-# Fuel Skeleton
+# Indigo ERP Stock
 
 [![Latest Stable Version](https://poser.pugx.org/indigophp/indigo-erp-stock/v/stable.png)](https://packagist.org/packages/indigophp/indigo-erp-stock)
 [![Total Downloads](https://poser.pugx.org/indigophp/indigo-erp-stock/downloads.png)](https://packagist.org/packages/indigophp/indigo-erp-stock)

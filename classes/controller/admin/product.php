@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Erp;
+namespace Erp\Stock;
 
 /**
  * Manufacturer Admin Controller
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Controller_Admin_Stock_Product extends \Admin\Controller_Skeleton
+class Controller_Admin_Product extends \Admin\Controller_Skeleton
 {
 	/**
 	 * {@inheritdoc}

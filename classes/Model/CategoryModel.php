@@ -123,22 +123,25 @@ class CategoryModel extends \Orm\Model_Nestedset
 	{
 		if ($root === null)
 		{
-			$root = \Erp\Model_Category::query()
+			$root = static::query()
 				->where('id', 1)
 				->get_one();
 		}
 
 		$return = [];
 
-		foreach ($root->children()->get() as $model)
+		if ($root)
 		{
-			if ($model->has_children())
+			foreach ($root->children()->get() as $model)
 			{
-				$return[$model->name] = static::generate_options($model);
-			}
-			else
-			{
-				$return[$model->id] = $model->name;
+				if ($model->has_children())
+				{
+					$return[$model->name] = static::generate_options($model);
+				}
+				else
+				{
+					$return[$model->id] = $model->name;
+				}
 			}
 		}
 

@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Erp;
+namespace Indigo\Erp\Stock\Model;
 
 /**
  * Manufacturer Model
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Model_Manufacturer extends \Orm\Model
+class ManufacturerModel extends \Orm\Model
 {
 	use \Indigo\Skeleton\Model;
 

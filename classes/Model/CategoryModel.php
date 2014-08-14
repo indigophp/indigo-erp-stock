@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Erp;
+namespace Indigo\Erp\Stock\Model;
 
 /**
  * Category Model
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Model_Category extends \Orm\Model_Nestedset
+class CategoryModel extends \Orm\Model_Nestedset
 {
 	/**
 	 * {@inheritdoc}

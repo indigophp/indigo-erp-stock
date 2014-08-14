@@ -9,19 +9,21 @@
  * file that was distributed with this source code.
  */
 
-namespace Erp;
+namespace Indigo\Erp\Stock\Model;
 
 /**
  * Product Model
  *
  * @author Márk Sági-Kazár <mark.sagikazar@gmail.com>
  */
-class Model_Product extends \Orm\Model_Temporal
+class ProductModel extends \Orm\Model_Temporal
 {
 	use \Indigo\Skeleton\Model;
 
 	protected static $_many_many = [
-		'categories',
+		'categories' => [
+			'model_to' => 'Model\\CategoryModel',
+		],
 	];
 
 	/**
@@ -181,11 +183,11 @@ class Model_Product extends \Orm\Model_Temporal
 
 	public static function _init()
 	{
-		$manufacturers = Model_Manufacturer::get_manufacturers();
+		$manufacturers = \Model\ManufacturerModel::get_manufacturers();
 		static::$_properties['manufacturer_id']['options'] = $manufacturers;
 		static::$_properties['manufacturer_id']['validation']['value'] = array_keys($manufacturers);
 
-		$categories = Model_Category::generate_options();
+		$categories = \Model\CategoryModel::generate_options();
 		static::$_properties['category_id']['options'] = $categories;
 		// static::$_properties['category_id']['validation']['value'] = array_keys($manufacturers);
 	}

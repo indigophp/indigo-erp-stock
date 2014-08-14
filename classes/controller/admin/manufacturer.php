@@ -26,7 +26,7 @@ class Controller_Admin_Manufacturer extends \Admin\Controller_Skeleton
 	/**
 	 * {@inheritdoc}
 	 */
-	protected $model = 'Erp\\Model_Manufacturer';
+	protected $model = 'Model\\ManufacturerModel';
 
 	/**
 	 * {@inheritdoc}

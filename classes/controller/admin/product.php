@@ -26,7 +26,7 @@ class Controller_Admin_Product extends \Admin\Controller_Skeleton
 	/**
 	 * {@inheritdoc}
 	 */
-	protected $model = 'Erp\\Model_Product';
+	protected $model = 'Model\\ProductModel';
 
 	/**
 	 * {@inheritdoc}

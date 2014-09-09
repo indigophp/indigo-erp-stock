@@ -16,4 +16,4 @@
 use Indigo\Core\Alias;
 
 $manager = Alias::instance('namespace');
-$manager->aliasNamespace('Indigo\\Erp\\Stock', '');
+// $manager->aliasNamespace('Indigo\\Erp\\Stock', 'Erp\\Stock');

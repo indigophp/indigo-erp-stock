@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Indigo\\Erp\\Stock\\": "classes/"
+            "Erp\\Stock\\": "classes/"
         },
         "files": [
             "autoload.php"

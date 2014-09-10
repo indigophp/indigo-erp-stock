@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	  xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping">
+
+	<entity name="Indigo\Erp\Stock\Entity\Product" table="erp_stock_products">
+		<id name="id" type="integer">
+			<generator strategy="AUTO" />
+		</id>
+
+		<field name="name" column="name" type="string">
+			<gedmo:versioned />
+		</field>
+		<field name="slug" column="slug" type="string" unique="true">
+			<gedmo:slug fields="name" unique="true" />
+		</field>
+		<field name="description" column="description" type="text">
+			<gedmo:versioned />
+		</field>
+
+		<field name="created_at" type="integer">
+			<gedmo:timestampable on="create"/>
+		</field>
+		<field name="updated_at" type="integer">
+			<gedmo:timestampable on="update"/>
+		</field>
+		<field name="deletedAt" column="deleted_at" type="integer" nullable="true" />
+
+
+		<gedmo:soft-deleteable field-name="deletedAt" />
+		<gedmo:loggable />
+	</entity>
+</doctrine-mapping>

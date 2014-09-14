@@ -16,7 +16,8 @@
         "indigophp/fuel-core": "dev-develop",
         "indigophp/indigo-erp": "dev-develop",
         "indigophp/indigo-skeleton": "dev-develop",
-        "indigophp/fuel-module": "dev-develop"
+        "indigophp/fuel-module": "dev-develop",
+        "mathiasverraes/money": "dev-nextrelease"
     },
     "autoload": {
         "psr-4": {

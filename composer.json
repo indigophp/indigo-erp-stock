@@ -17,6 +17,7 @@
         "indigophp/indigo-erp": "dev-develop",
         "indigophp/indigo-skeleton": "dev-develop",
         "indigophp/fuel-module": "dev-develop",
+        "indigophp/indigo-taxonomy": "dev-develop",
         "mathiasverraes/money": "dev-nextrelease"
     },
     "autoload": {

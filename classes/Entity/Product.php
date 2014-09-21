@@ -13,6 +13,7 @@ namespace Erp\Stock\Entity;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping AS ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 use Money\Money;
 
 /**
@@ -30,6 +31,13 @@ class Product
 	use \Indigo\Doctrine\Behavior\Slug;
 
 	/**
+	 * @var Collection
+	 *
+	 * @ORM\ManyToMany(targetEntity="Taxonomy\Entity\Taxon")
+	 */
+	private $taxons;
+
+	/**
 	 * @var Money
 	 *
 	 * @ORM\Column(type="money")
@@ -42,6 +50,11 @@ class Product
 	 * @ORM\Column(type="integer")
 	 */
 	private $inventory;
+
+	public function __construct()
+	{
+		$this->taxons = new ArrayCollection;
+	}
 
 	/**
 	 * Returns the price
@@ -89,5 +102,36 @@ class Product
 		$this->inventory = $inventory;
 
 		return $this;
+	}
+
+	public function getTaxons($taxonomy = null)
+	{
+		if (null !== $taxonomy) {
+			return $this->taxons->filter(function ($taxon) use ($taxonomy) {
+				return $taxonomy === strtolower($taxon->getTaxonomy()->getName());
+			});
+		}
+
+		return $this->taxons;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function addTaxon($taxon)
+	{
+		if (!$this->hasTaxon($taxon)) {
+			$this->taxons->add($taxon);
+		}
+
+		return $this;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function hasTaxon($taxon)
+	{
+		return $this->taxons->contains($taxon);
 	}
 }

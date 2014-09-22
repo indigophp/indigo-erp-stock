@@ -51,9 +51,17 @@ class Product
 	 */
 	private $inventory;
 
+	/**
+	 * @var Collection
+	 *
+	 * @ORM\OneToMany(targetEntity="Erp\Stock\Entity\Image", mappedBy="product")
+	 */
+	private $images;
+
 	public function __construct()
 	{
 		$this->taxons = new ArrayCollection;
+		$this->images = new ArrayCollection;
 	}
 
 	/**
@@ -133,5 +141,10 @@ class Product
 	public function hasTaxon($taxon)
 	{
 		return $this->taxons->contains($taxon);
+	}
+
+	public function getImages()
+	{
+		return $this->images;
 	}
 }
